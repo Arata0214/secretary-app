@@ -9,7 +9,14 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@auth/prisma-adapter": "^2.11.1",
+    "@google/generative-ai": "^0.24.1",
+    "@libsql/client": "^0.17.0",
+    "@prisma/adapter-libsql": "^7.5.0",
+    "@prisma/client": "^7.5.0",
+    "googleapis": "^171.4.0",
     "next": "16.1.7",
+    "next-auth": "^5.0.0-beta.30",
     "react": "19.2.3",
     "react-dom": "19.2.3"
   },
@@ -19,6 +26,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.1.7",
+    "prisma": "^7.5.0",
     "typescript": "^5"
   }
 }

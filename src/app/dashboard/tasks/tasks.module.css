@@ -1,0 +1,232 @@
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.controls {
+  display: flex;
+  gap: 1rem;
+}
+
+.select {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.1);
+  background: var(--background);
+  color: var(--foreground);
+  font-family: inherit;
+}
+
+@media (prefers-color-scheme: dark) {
+  .select { border-color: rgba(255,255,255,0.1); }
+}
+
+.section {
+  background: var(--background);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  border: 1px solid rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .section {
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  }
+}
+
+.sectionTitle {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+  .sectionTitle { border-bottom-color: rgba(255,255,255,0.1); }
+}
+
+.taskItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.taskItem:hover {
+  background: rgba(0,0,0,0.02);
+}
+
+@media (prefers-color-scheme: dark) {
+  .taskItem { border-bottom-color: rgba(255,255,255,0.05); }
+  .taskItem:hover { background: rgba(255,255,255,0.02); }
+}
+
+.taskItem:last-child {
+  border-bottom: none;
+}
+
+.taskLeft {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.taskRight {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.checkbox {
+  width: 1.2rem;
+  height: 1.2rem;
+  cursor: pointer;
+}
+
+.taskTitle {
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.categoryIcon {
+  margin-right: 0.5rem;
+}
+
+.deadline {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+.deadline.urgent { color: var(--color-red); }
+.deadline.normal { color: var(--color-blue); }
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.addButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: var(--color-blue);
+  border: 1px dashed var(--color-blue);
+  padding: 1rem;
+  width: 100%;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.addButton:hover {
+  background: rgba(96, 165, 250, 0.1);
+}
+
+/* Modal styles */
+.modalOverlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+.modal {
+  background: var(--background);
+  padding: 2rem;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.modalTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.field {
+  margin-bottom: 1rem;
+}
+
+.label {
+  display: block;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+  opacity: 0.8;
+}
+
+.input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--foreground);
+}
+
+@media (prefers-color-scheme: dark) {
+  .input { border-color: rgba(255,255,255,0.2); }
+}
+
+.actionRow {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.saveBtn {
+  background: var(--color-blue);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.cancelBtn {
+  background: transparent;
+  color: var(--foreground);
+  border: 1px solid rgba(0,0,0,0.2);
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.deleteBtn {
+  background: transparent;
+  color: var(--color-red);
+  border: 1px solid var(--color-red);
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-right: auto;
+}

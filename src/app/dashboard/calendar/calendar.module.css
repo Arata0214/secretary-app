@@ -1,0 +1,196 @@
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.monthTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navButtons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.navBtn {
+  background: var(--background);
+  border: 1px solid rgba(0,0,0,0.1);
+  color: var(--foreground);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+@media (prefers-color-scheme: dark) {
+  .navBtn { border-color: rgba(255,255,255,0.1); }
+}
+
+.navBtn:hover {
+  background: rgba(0,0,0,0.05);
+}
+
+@media (prefers-color-scheme: dark) {
+  .navBtn:hover { background: rgba(255,255,255,0.05); }
+}
+
+.calendarGrid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 1px;
+  background: rgba(0,0,0,0.1);
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  table-layout: fixed;
+  width: 100%;
+}
+
+@media (prefers-color-scheme: dark) {
+  .calendarGrid {
+    background: rgba(255,255,255,0.1);
+    border-color: rgba(255,255,255,0.1);
+  }
+}
+
+.dayHeader {
+  background: var(--background);
+  padding: 1rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.dayCell {
+  background: var(--background);
+  min-height: 90px;
+  max-height: 130px;
+  padding: 0.5rem;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.2s;
+  overflow: hidden;
+}
+
+.dayCell:hover {
+  background: rgba(0,0,0,0.02);
+}
+
+@media (prefers-color-scheme: dark) {
+  .dayCell:hover { background: rgba(255,255,255,0.02); }
+}
+
+.otherMonth {
+  background: rgba(0,0,0,0.02);
+  color: rgba(0,0,0,0.3);
+}
+
+@media (prefers-color-scheme: dark) {
+  .otherMonth {
+    background: rgba(255,255,255,0.02);
+    color: rgba(255,255,255,0.3);
+  }
+}
+
+.todayCell {
+  background: rgba(69, 123, 157, 0.05);
+}
+
+.dateNumber {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.todayBadge {
+  background: var(--color-blue);
+  color: white;
+  font-size: 0.7rem;
+  padding: 0.1rem 0.4rem;
+  border-radius: 999px;
+}
+
+.eventList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-top: 0.5rem;
+}
+
+.eventItem {
+  font-size: 0.65rem;
+  padding: 0.15rem 0.3rem;
+  background: var(--color-blue);
+  color: white;
+  border-radius: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  display: block;
+}
+
+/* Modal */
+.modalOverlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+.modal {
+  background: var(--background);
+  padding: 2rem;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.modalTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.modalEvent {
+  padding: 1rem;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+  .modalEvent { border-bottom-color: rgba(255,255,255,0.1); }
+}
+
+.modalEvent:last-child {
+  border-bottom: none;
+}
+
+.closeBtn {
+  background: transparent;
+  color: var(--foreground);
+  border: 1px solid rgba(0,0,0,0.2);
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .closeBtn { border-color: rgba(255,255,255,0.2); }
+}
