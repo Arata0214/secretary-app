@@ -194,3 +194,31 @@
 @media (prefers-color-scheme: dark) {
   .closeBtn { border-color: rgba(255,255,255,0.2); }
 }
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .dayHeader {
+    padding: 0.5rem 0.25rem;
+    font-size: 0.75rem;
+  }
+  .dayCell {
+    min-height: 60px;
+    padding: 0.2rem;
+  }
+  .dateNumber {
+    font-size: 0.8rem;
+    margin-bottom: 0.2rem;
+  }
+  .eventItem {
+    font-size: 0.5rem;
+    padding: 0.1rem;
+  }
+  .todayBadge {
+    padding: 0.1rem 0.2rem;
+    font-size: 0.6rem;
+  }
+}
